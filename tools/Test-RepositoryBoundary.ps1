@@ -9,6 +9,7 @@ $forbiddenExtensions = @('.exe', '.bin', '.rbf', '.elf', '.zip', '.7z', '.rom', 
 $forbiddenNames = @('Developer_Reference', '_review_needed', 'logs')
 
 $violations = Get-ChildItem -LiteralPath $root -Recurse -Force -File | Where-Object {
+    if ($_.FullName -match '[\\/]\.git[\\/]') { return $false }
     $relative = $_.FullName.Substring($root.Length).TrimStart('\', '/')
     $segments = $relative -split '[\\/]'
     $_.Extension.ToLowerInvariant() -in $forbiddenExtensions -or

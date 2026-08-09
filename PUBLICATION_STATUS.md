@@ -23,10 +23,14 @@ Status date: `2026-08-09`
 - Final public package rebuild, clean-system smoke and upload-byte verification
   remain pending.
 
-## Repository connection pending
+## Public repository
 
-The local public staging repository has no confirmed GitHub remote. The
-available GitHub credential belongs to `Macdaxter`, but no public repository or
-tested private repository under the expected VirtualBus names was found.
-Publication therefore requires the exact existing repository URL, or an
-explicit decision to create a new `Macdaxter/NeoConnect-VirtualBus` repository.
+The curated documentation repository is public at:
+
+`https://github.com/Macdaxter/NeoConnect-VirtualBus`
+
+Its `main` history begins with the reviewed public export only. The internal
+CLEAN tree, Developer Reference, logs, LKG history, source snapshots and RC
+binaries were not imported into the public Git history. GitHub Releases remain
+empty until the binary, licensing, corresponding-source and hardware gates
+above are complete.
