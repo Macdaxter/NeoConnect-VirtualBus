@@ -1,0 +1,56 @@
+name: Beta bug report
+description: Report one reproducible VirtualBus beta problem
+title: "[Beta] "
+labels: ["beta", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach ROMs, BIOS files, credentials or unredacted private logs.
+  - type: input
+    id: version
+    attributes:
+      label: Release version
+      placeholder: 0.9.0-beta.x
+    validations:
+      required: true
+  - type: textarea
+    id: identities
+    attributes:
+      label: Component identities
+      description: Launcher, MAME, ESP firmware, MiSTer HPS/core and protocol versions.
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Configuration
+      description: Game/profile, BIOS, region, DIP/Soft-DIP, clock, roles, IDs and transport.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and relevant redacted logs
+    validations:
+      required: true
+  - type: checkboxes
+    id: integrity
+    attributes:
+      label: Package integrity
+      options:
+        - label: I verified the release ZIP and package checksums.
+          required: true
+        - label: I did not mix components from different releases.
+          required: true

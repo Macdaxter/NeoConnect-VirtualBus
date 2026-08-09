@@ -1,0 +1,25 @@
+# Release binaries belong to GitHub Releases, not the repository.
+*.exe
+*.bin
+*.rbf
+*.elf
+*.zip
+*.7z
+*.rom
+*.chd
+
+# Local release staging and generated checksums.
+dist/
+staging/
+SHA256SUMS.txt
+
+# Runtime and development residue.
+logs/
+*.log
+__pycache__/
+*.pyc
+.pytest_cache/
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
