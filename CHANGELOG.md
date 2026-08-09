@@ -7,9 +7,9 @@
 - Added explicit beta.6 physical qualification gates.
 - Added an immutable GitHub Release asset model and automated release checks.
 - Added licensing and corresponding-source gates for redistributed components.
-- Classified the corrected `START MISTER`/`DUALMODE` presentation as a beta.5
-  UI-only revision. The rebuilt executable remains a distinct checksummed
-  artifact and does not overwrite the frozen beta.5 binary.
+- Froze the corrected `START MISTER` and cyclic system selector as controlled
+  package `0.9.0-beta.5.1`. It remains a beta.5 UI-only revision with distinct
+  checksums and does not overwrite the frozen beta.5 archive.
 - Marked the public repository as a project preview with controlled beta
   distribution and added a dedicated tester-interest issue form.
 

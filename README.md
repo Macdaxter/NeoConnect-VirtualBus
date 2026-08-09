@@ -16,11 +16,11 @@ InputSync diagnostics and controlled reconnect behavior.
 
 ## Controlled beta status
 
-The latest qualified internal reference is `0.9.0-beta.5`. The current frontend
-remains on that functional contract; its corrected `START MISTER` and visible
-`DUALMODE` presentation are a UI-only revision, not a beta.6 protocol feature.
-Because the rebuilt EXE has a new checksum, it does not silently replace the
-frozen beta.5 artifact.
+The latest controlled-test package is `0.9.0-beta.5.1`. It remains on the
+qualified beta.5 functional contract; the corrected `START MISTER` text and
+the cyclic `MAME -> MISTER -> DUALMODE -> MAME` selector are UI-only changes,
+not beta.6 protocol features. The original beta.5 archive remains immutable;
+beta.5.1 has its own manifest and checksums.
 
 The next public candidate, beta.6, adds MiSTer InputSync frame authority and
 deterministic preflight contracts, but it is **not published or

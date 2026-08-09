@@ -11,8 +11,8 @@ Status date: `2026-08-09`
 - Immutable release asset naming and SHA256 process are defined.
 - Repository-boundary and release-asset validation scripts are prepared.
 - beta.6 candidate changes and physical acceptance gates are documented.
-- Current frontend behavior is classified as beta.5 plus a UI-only revision;
-  the rebuilt EXE remains a separately checksummed candidate artifact.
+- The UI revision is frozen as controlled-test package `0.9.0-beta.5.1` with
+  separate package and launcher checksums; its functional scope remains beta.5.
 - Public project preview and controlled-beta tester intake are active; binary
   packages remain privately distributed to selected testers.
 
@@ -20,7 +20,7 @@ Status date: `2026-08-09`
 
 - beta.6 physical WAIT/commit/negative/rejoin/preflight/F3 acceptance is not
   complete.
-- The existing beta.5 user ZIP lacks the complete public third-party license
+- The controlled beta.5.1 user ZIP lacks the complete public third-party license
   and corresponding-source bundle required for its redistributed binaries.
 - Final public package rebuild, clean-system smoke and upload-byte verification
   remain pending.
