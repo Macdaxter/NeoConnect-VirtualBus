@@ -1,5 +1,12 @@
 # NeoConnect VirtualBus
 
+> **Public project preview / controlled beta testing in progress.**
+>
+> Binary packages are currently provided only to selected testers through
+> private links or prepared USB media. There is no public binary download yet.
+
+## What is this?
+
 NeoConnect VirtualBus connects multiple Neo Geo instances across MAME,
 MiSTer and dedicated ESP adapters. It provides cabinet identity, session
 roles, transport-independent framing, game-specific MCU profiles,
@@ -7,7 +14,7 @@ InputSync diagnostics and controlled reconnect behavior.
 
 ![VirtualBus diagnostic console](assets/virtualbus-diagnostic-console.png)
 
-## Public beta status
+## Controlled beta status
 
 The latest qualified internal reference is `0.9.0-beta.5`. The current frontend
 remains on that functional contract; its corrected `START MISTER` and visible
@@ -27,6 +34,19 @@ for every redistributed GPL component.
 
 See [Beta Scope](BETA_SCOPE.md) for the exact supported boundary and
 [Release Process](docs/RELEASE_PROCESS.md) for the publication gates.
+
+The controlled test group is validating the real external-user path: package
+verification, ESP flashing, cabinet configuration, MAME/MiSTer installation,
+session startup and useful failure logs. Test packages remain versioned and
+must not be mixed even during this closed phase.
+
+## Interested in testing?
+
+Open a [beta tester interest request](https://github.com/Macdaxter/NeoConnect-VirtualBus/issues/new?template=beta_tester_interest.yml)
+and describe the hardware and topology you can test. Requests are public; do
+not include email addresses, credentials, ROM information or other personal
+data. Package access is provided only to selected testers through an
+appropriate private channel.
 
 ## Proven reference paths
 
@@ -68,7 +88,7 @@ snapshots are archived separately and are not public release assets.
 
 1. Read [Beta Scope](BETA_SCOPE.md).
 2. Read [Installation](INSTALL.md).
-3. Verify every downloaded release with the published SHA256 file.
+3. Review the [Protocol Overview](PROTOCOL_OVERVIEW.md).
 4. Keep MAME, MiSTer, frontend and ESP components from one release together.
 
 VirtualBus follows the principles in the [Project Charter](PROJECT_CHARTER.md):

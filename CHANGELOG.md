@@ -10,6 +10,8 @@
 - Classified the corrected `START MISTER`/`DUALMODE` presentation as a beta.5
   UI-only revision. The rebuilt executable remains a distinct checksummed
   artifact and does not overwrite the frozen beta.5 binary.
+- Marked the public repository as a project preview with controlled beta
+  distribution and added a dedicated tester-interest issue form.
 
 ## 0.9.0-beta.5 - qualified internal reference
 

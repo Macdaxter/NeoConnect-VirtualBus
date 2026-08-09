@@ -13,6 +13,8 @@ Status date: `2026-08-09`
 - beta.6 candidate changes and physical acceptance gates are documented.
 - Current frontend behavior is classified as beta.5 plus a UI-only revision;
   the rebuilt EXE remains a separately checksummed candidate artifact.
+- Public project preview and controlled-beta tester intake are active; binary
+  packages remain privately distributed to selected testers.
 
 ## Blocking the first public binary release
 
