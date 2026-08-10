@@ -94,3 +94,5 @@ snapshots are archived separately and are not public release assets.
 VirtualBus follows the principles in the [Project Charter](PROJECT_CHARTER.md):
 local operation, self-hosting, transparent diagnostics, voluntary telemetry
 and preservation are part of the system contract.
+
+AI accelerated the implementation, but it did not define the project. I designed the system, chose the experiments, interpreted the results and made the architectural decisions. AI effectively gave me a virtual development team, allowing me to implement and test ideas at roughly the speed I could reason about them.
