@@ -40,13 +40,18 @@ verification, ESP flashing, cabinet configuration, MAME/MiSTer installation,
 session startup and useful failure logs. Test packages remain versioned and
 must not be mixed even during this closed phase.
 
-## Interested in testing?
+## Tested VirtualBus?
 
-Open a [beta tester interest request](https://github.com/Macdaxter/NeoConnect-VirtualBus/issues/new?template=beta_tester_interest.yml)
-and describe the hardware and topology you can test. Requests are public; do
-not include email addresses, credentials, ROM information or other personal
-data. Package access is provided only to selected testers through an
-appropriate private channel.
+Open a [beta test report](https://github.com/Macdaxter/NeoConnect-VirtualBus/issues/new?template=beta_test_report.yml)
+and briefly describe your setup, what worked and what did not. No testing
+resume, mandatory logs or laboratory procedure is required. Play first and
+report what you observe.
+
+Diagnostics are disabled by default. If something fails, they can be enabled
+explicitly in the launcher and shared voluntarily after redaction. Never post
+credentials, private IP addresses, ROM information or personal data in a
+public issue. Until the first public binary release, versioned test packages
+continue to be distributed through the controlled test group.
 
 ## Proven reference paths
 

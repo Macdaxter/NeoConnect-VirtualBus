@@ -13,8 +13,9 @@ Status date: `2026-08-09`
 - beta.6 candidate changes and physical acceptance gates are documented.
 - The UI revision is frozen as controlled-test package `0.9.0-beta.5.1` with
   separate package and launcher checksums; its functional scope remains beta.5.
-- Public project preview and controlled-beta tester intake are active; binary
-  packages remain privately distributed to selected testers.
+- Public beta reporting is prepared around real-world use and optional
+  diagnostics; controlled test packages remain privately distributed until
+  the first public binary release.
 
 ## Blocking the first public binary release
 

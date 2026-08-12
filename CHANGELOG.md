@@ -10,8 +10,8 @@
 - Froze the corrected `START MISTER` and cyclic system selector as controlled
   package `0.9.0-beta.5.1`. It remains a beta.5 UI-only revision with distinct
   checksums and does not overwrite the frozen beta.5 archive.
-- Marked the public repository as a project preview with controlled beta
-  distribution and added a dedicated tester-interest issue form.
+- Replaced the public tester-access request with a low-threshold beta test
+  report focused on real setups, play results and optional diagnostics.
 
 ## 0.9.0-beta.5 - qualified internal reference
 

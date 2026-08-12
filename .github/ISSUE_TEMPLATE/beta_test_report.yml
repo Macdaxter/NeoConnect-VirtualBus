@@ -1,0 +1,89 @@
+name: Beta test report
+description: Tell us what you tested and how VirtualBus worked in your setup
+title: "[Beta report] "
+labels: ["beta", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing NeoConnect VirtualBus.
+
+        The intended path is simple: use one complete release package, follow
+        the setup guide, connect your hardware and play. This report is for
+        real-world results; no prior testing experience is required.
+
+        You need your own compatible ROM and BIOS files. NeoConnect VirtualBus
+        does not provide ROMs, BIOS files or CHDs.
+
+        Diagnostic logging is disabled by default. If something fails, it can
+        be enabled explicitly in the launcher and logs may be shared
+        voluntarily. Never post credentials, private IP addresses or personal
+        information in a public issue.
+  - type: input
+    id: version
+    attributes:
+      label: VirtualBus version
+      description: Use the version shown in the package or release manifest.
+      placeholder: 0.9.0-beta.x
+    validations:
+      required: true
+  - type: checkboxes
+    id: hardware
+    attributes:
+      label: Hardware used
+      description: Select everything that was part of your test.
+      options:
+        - label: Windows x64 PC
+        - label: MiSTer FPGA
+        - label: ESP8266 NodeMCU
+        - label: Arcade stick or controller
+        - label: More than one PC
+        - label: More than one MiSTer
+        - label: Other compatible hardware
+  - type: checkboxes
+    id: test_area
+    attributes:
+      label: What did you test?
+      options:
+        - label: MAME to MAME
+        - label: MAME to MiSTer
+        - label: Local multiplayer
+        - label: Two, three or four cabinet setup
+        - label: League Bowling
+        - label: Riding Hero
+        - label: Thrash Rally
+        - label: InputSync game
+        - label: General setup and usability
+        - label: Other
+  - type: textarea
+    id: setup
+    attributes:
+      label: Short setup description
+      description: Briefly describe the endpoints, adapters, controllers and connection method you used.
+      placeholder: 2 Windows PCs, 2 NodeMCU adapters, 2 arcade sticks, local Wi-Fi
+    validations:
+      required: true
+  - type: textarea
+    id: worked
+    attributes:
+      label: What worked?
+      description: Tell us what you could install, start and play successfully.
+    validations:
+      required: true
+  - type: textarea
+    id: problems
+    attributes:
+      label: What did not work or was unclear?
+      description: Leave this empty if everything worked. Reproduction steps are helpful but do not need to be laboratory-grade.
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Optional diagnostics
+      description: Add launcher messages or voluntarily collected, redacted logs only when they help explain a problem.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public issue safety
+      options:
+        - label: I did not attach ROMs, BIOS files, CHDs, credentials, private IP addresses or personal information.
+          required: true
