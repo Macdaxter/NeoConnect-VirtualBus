@@ -1,3 +1,9 @@
+![NeoConnect VirtualBus 8-player Neo Geo demonstration](assets/virtualbus-8-player-title.png)
+
+[![Live demonstration: League Bowling, 8-player](assets/league-bowling-8-player-youtube.jpg)](https://www.youtube.com/watch?v=72LlkCf3ksc)
+
+**Live demonstration: League Bowling, 8-player**
+
 # NeoConnect VirtualBus
 
 > **Public project preview / controlled beta testing in progress.**
@@ -11,6 +17,12 @@ NeoConnect VirtualBus connects multiple Neo Geo instances across MAME,
 MiSTer and dedicated ESP adapters. It provides cabinet identity, session
 roles, transport-independent framing, game-specific MCU profiles,
 InputSync diagnostics and controlled reconnect behavior.
+
+### User launcher
+
+![NeoConnect VirtualBus user launcher](assets/virtualbus-launcher.png)
+
+### Diagnostics
 
 ![VirtualBus diagnostic console](assets/virtualbus-diagnostic-console.png)
 
@@ -64,6 +76,15 @@ continue to be distributed through the controlled test group.
 - NodeMCU USB and local WLAN/LAN transports.
 - Timeout, peer-loss, reconnect and portable launcher diagnostics.
 - MiSTer Original/Fixed16/Fixed24 local clock profiles.
+
+## Hardware reference
+
+The current beta reference uses ESP8266 NodeMCU adapters, with display and
+no-display variants supported by the packaged firmware.
+
+<p align="center">
+  <img src="assets/virtualbus-esp-adapters.png" alt="ESP8266 NodeMCU VirtualBus adapter examples" width="520">
+</p>
 
 ## Package model
 
