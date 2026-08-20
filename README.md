@@ -222,4 +222,27 @@ VirtualBus follows the principles in the [Project Charter](PROJECT_CHARTER.md):
 local operation, self-hosting, transparent diagnostics, voluntary telemetry
 and preservation are part of the system contract.
 
+## Support and follow the project
+
+NeoConnect VirtualBus is an independent development project.
+
+The base software is not intended to be locked behind a paid membership. If
+you find the project useful and would like to help fund further development,
+test hardware, adapters and future hardware prototypes, voluntary support is
+welcome through Ko-fi:
+
+[Support NeoConnect VirtualBus on Ko-fi](https://ko-fi.com/macdaxter)
+
+I'm also interested in hearing from:
+
+- Neo Geo MVS/AES owners.
+- MiSTer users.
+- MAME users.
+- Arcade operators.
+- Retro events and museums.
+- Developers interested in compatible integrations.
+- People willing to help test unusual Neo Geo multiplayer behavior.
+
+Feedback, testing and documentation are just as valuable as financial support.
+
 AI accelerated the implementation, but it did not define the project. I designed the system, chose the experiments, interpreted the results and made the architectural decisions. AI effectively gave me a virtual development team, allowing me to implement and test ideas at roughly the speed I could reason about them.
