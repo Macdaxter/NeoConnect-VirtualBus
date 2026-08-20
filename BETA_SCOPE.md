@@ -3,6 +3,10 @@
 This document distinguishes qualified behavior from known limits and future
 work. A feature is public only when the matching GitHub Release says it is.
 
+Title-specific observations are tracked in
+[Compatibility Matrix](docs/COMPATIBILITY_MATRIX.md). That matrix records
+observed behavior only; it is not a complete Neo Geo database.
+
 ## PASS / qualified for the beta.6 public candidate
 
 | Area | Public statement |

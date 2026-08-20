@@ -13,6 +13,11 @@
   MAME InputSync candidate authority.
 - Replaced public front-page screenshot artwork with neutral project-owned
   artwork.
+- Reworked the README introduction around the actual project distinction:
+  original communication profiles, InputSync extensions and transport as a
+  separate layer.
+- Added an initial observation-based compatibility matrix, including Magician
+  Lord as an InputSync candidate with unverified Fix Layer / 24 MHz causality.
 - Replaced the public tester-access request with a low-threshold beta test
   report focused on real setups, play results and optional diagnostics.
 

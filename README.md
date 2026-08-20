@@ -11,10 +11,102 @@
 
 ## What is this?
 
-NeoConnect VirtualBus connects multiple Neo Geo instances across MAME,
-MiSTer and dedicated ESP adapters. It provides cabinet identity, session
-roles, transport-independent framing, game-specific MCU profiles,
-InputSync diagnostics and controlled reconnect behavior.
+NeoConnect VirtualBus restores and extends communication between Neo Geo
+systems. It does not start from the question "How do we make this ROM playable
+online?", but from a different one: "How do we give this Neo Geo system a
+communication partner again?"
+
+That means there are two different synchronization models:
+
+- Original communication / MCU profiles reproduce the communication behavior
+  expected by linkable games such as Riding Hero, League Bowling and Thrash
+  Rally.
+- InputSync is an additional path for games without an original link mode. It
+  synchronizes deterministic inputs and verifies state with same-frame hashes.
+
+The transport is not the multiplayer model. It is only the path between
+systems. USB, local WLAN/LAN and future adapter variants carry VirtualBus
+frames; the game-specific communication or InputSync contract decides what
+those frames mean.
+
+The game itself still decides what Coin, Start, Player 1, Player 2,
+Challenger, Co-op or Versus mean. VirtualBus does not replace those rules with
+a generic multiplayer model.
+
+## What can currently be tested?
+
+The first beta candidate is intentionally limited to validated paths.
+
+### MAME
+
+Currently available for testing:
+
+- MAME to MAME InputSync v3.
+- Canonical deterministic preflight.
+- Coin/Start/System input authority.
+- F1/F5 synchronized input transport.
+- F3 state/hash verification.
+- Sync-loss detection and fail-closed behavior.
+- Reconnect/session diagnostics.
+- Original / Fixed16 / Fixed24 CPU profiles.
+
+InputSync compatibility is title-dependent and documented per tested game.
+Examples currently under compatibility testing include Metal Slug, Metal Slug
+2, Metal Slug 5, 3 Count Bout, Blazing Star, Pulstar, Shock Troopers 2, Last
+Resort, Magician Lord and additional Neo Geo titles as the beta expands.
+
+Not every title reacts identically to InputSync or overclocking. Game-specific
+Coin/Start behavior, audio behavior, timing and other original software
+characteristics are documented rather than hidden.
+
+### Original communication / MCU profiles
+
+Validated or actively qualified reference paths include:
+
+- Riding Hero.
+- League Bowling.
+- Thrash Rally.
+
+League Bowling provides the current four-cabinet / eight-player reference
+case.
+
+### MiSTer
+
+Current MiSTer support includes documented original-communication paths and
+local clock-profile support. MAME to MiSTer InputSync v3 artifacts exist, but
+full mixed-platform InputSync parity is not yet a public PASS claim until
+physical acceptance is complete.
+
+### ESP8266 beta adapter
+
+The first beta reference hardware is the inexpensive ESP8266 NodeMCU. Current
+intended beta use:
+
+- USB endpoint.
+- Local WLAN/LAN transport.
+- Cabinet identity.
+- Peer/session communication.
+- Firmware/version diagnostics.
+- Display and no-display variants.
+
+NodeMCU RS485 has been protocol-validated but is not release-qualified for
+continuous real-time InputSync. ESP32/HardwareSerial RS485 remains a separate
+development and qualification track.
+
+## What VirtualBus Is Not
+
+VirtualBus is not primarily:
+
+- A ROM streaming system.
+- Rollback netplay.
+- A cloud gaming service.
+- A central-server-dependent multiplayer service.
+- A replacement for the original Neo Geo game logic.
+- A promise that every Neo Geo title behaves identically.
+- A universal slowdown fix.
+
+The project preserves original behavior wherever that behavior exists and adds
+new infrastructure only where explicitly defined.
 
 ### User launcher
 
@@ -70,7 +162,7 @@ credentials, private IP addresses, ROM information or personal data in a
 public issue. Until the first public binary release, versioned test packages
 continue to be distributed through the controlled test group.
 
-## Proven reference paths
+## Validated reference paths
 
 - MAME to MAME for the documented LKG profiles.
 - MAME to MiSTer for documented MCU profiles at original timing.
@@ -82,6 +174,9 @@ continue to be distributed through the controlled test group.
 - NodeMCU USB and local WLAN/LAN transports.
 - Timeout, peer-loss, reconnect and portable launcher diagnostics.
 - MiSTer Original/Fixed16/Fixed24 local clock profiles.
+
+See [Compatibility Matrix](docs/COMPATIBILITY_MATRIX.md) for title-specific
+observations that are already documented for the public beta.
 
 ## Hardware reference
 
