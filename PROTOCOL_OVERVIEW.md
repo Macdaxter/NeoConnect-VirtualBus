@@ -33,14 +33,16 @@ diagnostics. A real hash mismatch is never hidden or normalized away.
 
 ## InputSync contract
 
-For the beta.5 reference:
+For the beta.6 MAME-to-MAME candidate:
 
 - F1 carries the authoritative input frame.
 - F5 acknowledges/progresses the frame barrier.
 - F3 reports deterministic state diagnostics on the qualified MAME path.
+- The preflight contract checks configuration and initial state before RUNNING.
+- Coin, Start, Service, Test and player inputs are part of the synchronized
+  input authority.
 
-The beta.6 candidate extends this with an explicit epoch and MiSTer frame
-authority contract:
+The MiSTer v3 candidate uses the same intended authority model:
 
 ```text
 INPUT_COMMIT(epoch, N, inputs)
@@ -51,8 +53,10 @@ INPUT_COMMIT(epoch, N, inputs)
 ```
 
 `N` is VirtualBus authority, `local_frame` is a diagnostic core counter and
-`epoch` invalidates stale work across reset/rejoin. This extension is not a
-publicly qualified feature until the hardware gates in `BETA_SCOPE.md` pass.
+`epoch` invalidates stale work across reset/rejoin. MAME-to-MAME InputSync uses
+the retained `F05C...` LKG binary for the first public candidate. Mixed
+MAME-to-MiSTer InputSync is not a public PASS claim until the exact release
+artifacts pass physical acceptance.
 
 ## Validity rule
 

@@ -2,7 +2,7 @@
 
 ## Public repository
 
-- Project overview and screenshots cleared for publication.
+- Project overview and publication-safe assets cleared for publication.
 - Beta scope, installation and protocol overview.
 - Project charter, changelog and contribution guidance.
 - Release notes, checksums and release verification tooling.

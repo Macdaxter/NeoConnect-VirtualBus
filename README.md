@@ -1,8 +1,6 @@
-![NeoConnect VirtualBus 8-player Neo Geo demonstration](assets/virtualbus-8-player-title.png)
+![NeoConnect VirtualBus public beta header](assets/virtualbus-8-player-title.png)
 
-[![Live demonstration: League Bowling, 8-player](assets/league-bowling-8-player-youtube.jpg)](https://www.youtube.com/watch?v=72LlkCf3ksc)
-
-**Live demonstration: League Bowling, 8-player**
+**Live demonstration:** [League Bowling, 8-player](https://www.youtube.com/watch?v=72LlkCf3ksc)
 
 # NeoConnect VirtualBus
 
@@ -28,16 +26,23 @@ InputSync diagnostics and controlled reconnect behavior.
 
 ## Controlled beta status
 
-The latest controlled-test package is `0.9.0-beta.5.1`. It remains on the
-qualified beta.5 functional contract; the corrected `START MISTER` text and
-the cyclic `MAME -> MISTER -> DUALMODE -> MAME` selector are UI-only changes,
-not beta.6 protocol features. The original beta.5 archive remains immutable;
-beta.5.1 has its own manifest and checksums.
+The current public-beta candidate is `0.9.0-beta.6`. Its MAME-to-MAME
+InputSync authority is the focused package binary:
 
-The next public candidate, beta.6, adds MiSTer InputSync frame authority and
-deterministic preflight contracts, but it is **not published or
-release-qualified yet**.
-Its physical WAIT/commit/rejoin/preflight/F3 acceptance gates must pass first.
+```text
+MAME/neogeo.exe
+SHA256 F05C1BAEA1BAD9826F55856F2D4DBB7D32D40C0501BC550CAB0FC0F178A8398A
+```
+
+This binary is the retained smooth LKG for the first public beta candidate. A
+newer local `neogeo.exe` is not a release replacement unless it passes the
+same A/B InputSync acceptance and the package checksums are regenerated.
+
+beta.6 adds deterministic MAME InputSync v3 startup, canonical preflight,
+Coin/System input authority and fail-closed sync-loss behavior. MiSTer
+InputSync v3 artifacts exist as a matched candidate set, but mixed
+MAME-to-MiSTer InputSync parity must still be listed as pending until physical
+acceptance passes.
 
 No download is intentionally attached to this repository yet. The first
 public GitHub Release will contain one immutable user package, its SHA256
@@ -72,7 +77,8 @@ continue to be distributed through the controlled test group.
 - Riding Hero and League Bowling reference topologies.
 - Thrash Rally M58 protocol and membership path, with a documented initiator
   timing limit.
-- MAME InputSync F1/F5 transport and authoritative F3 diagnostics.
+- MAME InputSync v3 for documented MAME-to-MAME profiles, including canonical
+  preflight, F1/F5 transport, F3 diagnostics and Coin/System input authority.
 - NodeMCU USB and local WLAN/LAN transports.
 - Timeout, peer-loss, reconnect and portable launcher diagnostics.
 - MiSTer Original/Fixed16/Fixed24 local clock profiles.
@@ -107,8 +113,8 @@ snapshots are archived separately and are not public release assets.
   real-time InputSync.
 - ESP32 HardwareSerial/MAX485 remains a separate hardware qualification block.
 - Public relay, lobby, accounts and NAT traversal are outside the current beta.
-- Mixed-clock MAME/MiSTer InputSync is not qualified until original-timing
-  same-frame authority passes on hardware.
+- MiSTer InputSync v3 and mixed-clock MAME/MiSTer InputSync are not public PASS
+  claims until the exact package artifacts pass physical acceptance.
 
 ## Start here
 

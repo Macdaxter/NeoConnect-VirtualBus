@@ -19,12 +19,11 @@ ROMs, BIOS files and CHDs are not distributed by this project.
    `SHA256SUMS.txt` from the same GitHub Release.
 2. Verify the ZIP SHA256 before extraction.
 3. Extract to a new directory or USB stick.
-4. Run `VERIFY_PACKAGE.ps1` inside the extracted package.
-5. Flash every configured ESP with the firmware included in that package.
-6. Start `VirtualBusLauncher.exe` and configure COM port, ROM directory,
+4. Flash every configured ESP with the firmware included in that package.
+5. Start `VirtualBusLauncher.exe` and configure COM port, ROM directory,
    role, cabinet ID and optional MiSTer connection.
-7. Use A/Host/0 and unique B-C-D/Client/1-3 identities.
-8. Start all endpoints with matching ROM, BIOS, DIP/Soft-DIP and clock profile.
+6. Use A/Host/0 and unique B-C-D/Client/1-3 identities.
+7. Start all endpoints with matching ROM, BIOS, DIP/Soft-DIP and clock profile.
 
 The launcher rejects unreadable adapters and firmware identities that do not
 match its release contract.

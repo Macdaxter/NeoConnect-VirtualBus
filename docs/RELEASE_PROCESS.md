@@ -38,7 +38,12 @@ checksums.
 
 ## Current gate
 
-`0.9.0-beta.5` is the qualified internal reference, but its existing user ZIP
-is not approved for public upload because the public license/corresponding-
-source bundle is incomplete. beta.6 additionally requires physical frame-
-authority acceptance. Neither is silently repackaged under an existing tag.
+`0.9.0-beta.6` is the current public-beta candidate. Its MAME-to-MAME
+InputSync authority is the focused `MAME/neogeo.exe` artifact with SHA256
+`F05C1BAEA1BAD9826F55856F2D4DBB7D32D40C0501BC550CAB0FC0F178A8398A`.
+
+The candidate is not approved for public upload until the final user archive,
+corresponding-source bundle, checksums and clean-system smoke pass. MiSTer
+InputSync v3 must either pass physical acceptance or be explicitly downgraded
+to experimental/limited in the release notes. No candidate is silently
+repackaged under an existing tag.

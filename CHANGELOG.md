@@ -4,12 +4,15 @@
 
 - Added a public documentation surface separated from the internal CLEAN and
   Developer Reference archives.
-- Added explicit beta.6 physical qualification gates.
+- Updated the public beta scope to the beta.6 F05C MAME-to-MAME InputSync
+  candidate while keeping MiSTer InputSync v3 physical parity as pending.
 - Added an immutable GitHub Release asset model and automated release checks.
 - Added licensing and corresponding-source gates for redistributed components.
-- Froze the corrected `START MISTER` and cyclic system selector as controlled
-  package `0.9.0-beta.5.1`. It remains a beta.5 UI-only revision with distinct
-  checksums and does not overwrite the frozen beta.5 archive.
+- Recorded the `MAME/neogeo.exe` SHA256
+  `F05C1BAEA1BAD9826F55856F2D4DBB7D32D40C0501BC550CAB0FC0F178A8398A` as the
+  MAME InputSync candidate authority.
+- Replaced public front-page screenshot artwork with neutral project-owned
+  artwork.
 - Replaced the public tester-access request with a low-threshold beta test
   report focused on real setups, play results and optional diagnostics.
 
