@@ -1,4 +1,4 @@
-![NeoConnect VirtualBus public beta header](assets/virtualbus-8-player-title.png)
+![NeoConnect VirtualBus public beta header](assets/virtualbus-public-beta-title.png)
 
 **Live demonstration:** [League Bowling, 8-player](https://www.youtube.com/watch?v=72LlkCf3ksc)
 
@@ -18,7 +18,7 @@ InputSync diagnostics and controlled reconnect behavior.
 
 ### User launcher
 
-![NeoConnect VirtualBus user launcher](assets/virtualbus-launcher.png)
+![NeoConnect VirtualBus user launcher](assets/virtualbus-launcher-neutral.png)
 
 ### Diagnostics
 
