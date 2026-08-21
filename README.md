@@ -1,248 +1,143 @@
-![NeoConnect VirtualBus public beta header](assets/virtualbus-public-beta-title.png)
-
-**Live demonstration:** [League Bowling, 8-player](https://www.youtube.com/watch?v=72LlkCf3ksc)
-
 # NeoConnect VirtualBus
 
-> **Public project preview / controlled beta testing in progress.**
->
-> Binary packages are currently provided only to selected testers through
-> private links or prepared USB media. There is no public binary download yet.
+![NeoConnect VirtualBus banner](banner.png)
 
-## What is this?
+NeoConnect VirtualBus asks a different question:
+
+not "How do we make this ROM playable online?",
+but "How do we give this Neo Geo system a communication partner again?"
 
 NeoConnect VirtualBus restores and extends communication between Neo Geo
-systems. It does not start from the question "How do we make this ROM playable
-online?", but from a different one: "How do we give this Neo Geo system a
-communication partner again?"
+systems. The project focuses on the link behavior itself: original MCU/link
+communication where the games already had it, and InputSync for documented
+modern multi-cabinet experiments where no original link hardware existed.
 
-That means there are two different synchronization models:
+## Public Beta Available
 
-- Original communication / MCU profiles reproduce the communication behavior
-  expected by linkable games such as Riding Hero, League Bowling and Thrash
-  Rally.
-- InputSync is an additional path for games without an original link mode. It
-  synchronizes deterministic inputs and verifies state with same-frame hashes.
+The first public beta release authority is:
 
-The transport is not the multiplayer model. It is only the path between
-systems. USB, local WLAN/LAN and future adapter variants carry VirtualBus
-frames; the game-specific communication or InputSync contract decides what
-those frames mean.
+`NeoConnect VirtualBus 0.9.0-beta.6`
 
-The game itself still decides what Coin, Start, Player 1, Player 2,
-Challenger, Co-op or Versus mean. VirtualBus does not replace those rules with
-a generic multiplayer model.
+GitHub Releases are marked as **Pre-release**. This is a beta build, not a
+final compatibility claim for every Neo Geo title.
 
-## What can currently be tested?
+The public package is the accepted RC3 user ZIP plus its matching
+corresponding-source ZIP. These archives are immutable for this release:
 
-The first beta candidate is intentionally limited to validated paths.
+```text
+NeoConnect-VirtualBus-0.9.0-beta.6-User_USB_Portable-RC3.zip
+SHA256 634681137D47B8ACCCEEF1DC0FC95F45FCCBC759A245A1D00661737B1629FA5D
 
-### MAME
+NeoConnect-VirtualBus-0.9.0-beta.6-Corresponding_Source-RC3.zip
+SHA256 96FB6326EF0D12E348AF52FA5B72512C0AEFB2CD439F7772B95AC7E1CBC88320
+```
 
-Currently available for testing:
+Any changed release artifact requires a new release candidate, new checksums
+and a matching acceptance entry.
 
-- MAME to MAME InputSync v3.
-- Canonical deterministic preflight.
-- Coin/Start/System input authority.
-- F1/F5 synchronized input transport.
-- F3 state/hash verification.
-- Sync-loss detection and fail-closed behavior.
-- Reconnect/session diagnostics.
-- Original / Fixed16 / Fixed24 CPU profiles.
+## What Is Included
 
-InputSync compatibility is title-dependent and documented per tested game.
-Examples currently under compatibility testing include Metal Slug, Metal Slug
-2, Metal Slug 5, 3 Count Bout, Blazing Star, Pulstar, Shock Troopers 2, Last
-Resort, Magician Lord and additional Neo Geo titles as the beta expands.
+- Windows portable launcher
+- focused Neo Geo MAME endpoint: `MAME/neogeo.exe`
+- ESP8266 NodeMCU USB/WLAN firmware and flasher
+- MiSTer beta files for the documented integration path
+- neutral placeholder artwork
+- user documentation, known limits and checksums
+- third-party license notices
 
-Not every title reacts identically to InputSync or overclocking. Game-specific
-Coin/Start behavior, audio behavior, timing and other original software
-characteristics are documented rather than hidden.
+No game ROMs, BIOS images, CHDs, screenshots, covers, flyers or publisher game
+assets are included.
 
-### Original communication / MCU profiles
+## Synchronization Models
 
-Validated or actively qualified reference paths include:
+NeoConnect VirtualBus distinguishes three different cases:
 
-- Riding Hero.
-- League Bowling.
-- Thrash Rally.
+- **Original link / MCU communication**: communication coherence for games such
+  as League Bowling, Riding Hero and Thrash Rally.
+- **MCU timeline sync**: F8 aligns the VirtualBus/MCU communication generation;
+  it is not emulator frame lockstep.
+- **InputSync lockstep**: F1/F5/F3, preflight, epoch and same-frame hash checks
+  provide deterministic machine-state synchronization for documented titles.
 
-League Bowling provides the current four-cabinet / eight-player reference
-case.
+Optically identical screens are not a determinism proof. InputSync determinism
+is verified through the documented commit/hash path.
 
-### MiSTer
+## Accepted Beta Evidence
 
-Current MiSTer support includes documented original-communication paths and
-local clock-profile support. MAME to MiSTer InputSync v3 artifacts exist, but
-full mixed-platform InputSync parity is not yet a public PASS claim until
-physical acceptance is complete.
-
-### ESP8266 beta adapter
-
-The first beta reference hardware is the inexpensive ESP8266 NodeMCU. Current
-intended beta use:
-
-- USB endpoint.
-- Local WLAN/LAN transport.
-- Cabinet identity.
-- Peer/session communication.
-- Firmware/version diagnostics.
-- Display and no-display variants.
-
-NodeMCU RS485 has been protocol-validated but is not release-qualified for
-continuous real-time InputSync. ESP32/HardwareSerial RS485 remains a separate
-development and qualification track.
-
-## What VirtualBus Is Not
-
-VirtualBus is not primarily:
-
-- A ROM streaming system.
-- Rollback netplay.
-- A cloud gaming service.
-- A central-server-dependent multiplayer service.
-- A replacement for the original Neo Geo game logic.
-- A promise that every Neo Geo title behaves identically.
-- A universal slowdown fix.
-
-The project preserves original behavior wherever that behavior exists and adds
-new infrastructure only where explicitly defined.
-
-### User launcher
-
-![NeoConnect VirtualBus user launcher](assets/virtualbus-launcher-neutral.png)
-
-### Diagnostics
-
-![VirtualBus diagnostic console](assets/virtualbus-diagnostic-console.png)
-
-## Controlled beta status
-
-The current public-beta candidate is `0.9.0-beta.6`. Its MAME-to-MAME
-InputSync authority is the focused package binary:
+RC3 release authority:
 
 ```text
 MAME/neogeo.exe
-SHA256 F05C1BAEA1BAD9826F55856F2D4DBB7D32D40C0501BC550CAB0FC0F178A8398A
+3EFCF21BBA749AFCC5EA71947442961EE957223B0ADD8993505AA5E208BB0412
 ```
 
-This binary is the retained smooth LKG for the first public beta candidate. A
-newer local `neogeo.exe` is not a release replacement unless it passes the
-same A/B InputSync acceptance and the package checksums are regenerated.
+Portable RC3 stick acceptance, 2026-08-21:
 
-beta.6 adds deterministic MAME InputSync v3 startup, canonical preflight,
-Coin/System input authority and fail-closed sync-loss behavior. MiSTer
-InputSync v3 artifacts exist as a matched candidate set, but mixed
-MAME-to-MiSTer InputSync parity must still be listed as pending until physical
-acceptance passes.
+- Game: Metal Slug 2
+- Profile: Fixed24
+- Topology: two PCs, two ESP8266 adapters
+- Host: main PC MAME endpoint
+- Client: unpacked RC3 stick package
+- ESP firmware flashed from the RC3 stick package
+- CONFIG preflight: PASS
+- STATE preflight: PASS
+- InputSync epoch: generation 1, logical start frame 143
+- Run: Level 1 into Level 2
+- `0 DESYNC`
+- fatal/error/overflow/verify/communication/invalid: 0
+- controlled client sync loss / fail-closed at frame 14164
 
-No download is intentionally attached to this repository yet. The first
-public GitHub Release will contain one immutable user package, its SHA256
-checksum, release notes and the corresponding source/license material required
-for every redistributed GPL component.
+Short synchronized stalls may occur, but no state divergence was observed
+during the RC3 acceptance run.
 
-See [Beta Scope](BETA_SCOPE.md) for the exact supported boundary and
-[Release Process](docs/RELEASE_PROCESS.md) for the publication gates.
+## Known Beta Limits
 
-The controlled test group is validating the real external-user path: package
-verification, ESP flashing, cabinet configuration, MAME/MiSTer installation,
-session startup and useful failure logs. Test packages remain versioned and
-must not be mixed even during this closed phase.
+- InputSync may currently show short synchronized stalls/hitches.
+- Sync loss intentionally fails closed instead of silently continuing as an
+  autonomous game.
+- Not every Neo Geo title, BIOS, DIP or profile combination is validated.
+- MiSTer InputSync v3 is included only to the extent documented in the beta
+  acceptance notes; do not claim full MAME parity without a matching hardware
+  acceptance run.
+- ESP8266 NodeMCU RS485 is protocol-validated but not release-qualified for
+  continuous real-time InputSync.
+- ESP32 RS485 qualification is a later hardware development block.
+- Public Internet lobby, accounts, NAT traversal and an official relay service
+  are outside this beta.
 
-## Tested VirtualBus?
+See:
 
-Open a [beta test report](https://github.com/Macdaxter/NeoConnect-VirtualBus/issues/new?template=beta_test_report.yml)
-and briefly describe your setup, what worked and what did not. No testing
-resume, mandatory logs or laboratory procedure is required. Play first and
-report what you observe.
+- `docs/BETA_ACCEPTANCE_MATRIX.md`
+- `docs/BETA_COMPATIBILITY_MATRIX.md`
+- `docs/BETA_KNOWN_LIMITATIONS.md`
+- `docs/BETA_MANIFEST.md`
 
-Diagnostics are disabled by default. If something fails, they can be enabled
-explicitly in the launcher and shared voluntarily after redaction. Never post
-credentials, private IP addresses, ROM information or personal data in a
-public issue. Until the first public binary release, versioned test packages
-continue to be distributed through the controlled test group.
+## Legal And Distribution Notes
 
-## Validated reference paths
+The packaged Neo Geo endpoint is a modified MAME build. MAME as a project is
+distributed under GPL-2.0-or-later, and MAME name/logo usage is subject to the
+MAME trademark notice. NeoConnect VirtualBus does not use the MAME logo and is
+not affiliated with or endorsed by MAMEDev.
 
-- MAME to MAME for the documented LKG profiles.
-- MAME to MiSTer for documented MCU profiles at original timing.
-- Riding Hero and League Bowling reference topologies.
-- Thrash Rally M58 protocol and membership path, with a documented initiator
-  timing limit.
-- MAME InputSync v3 for documented MAME-to-MAME profiles, including canonical
-  preflight, F1/F5 transport, F3 diagnostics and Coin/System input authority.
-- NodeMCU USB and local WLAN/LAN transports.
-- Timeout, peer-loss, reconnect and portable launcher diagnostics.
-- MiSTer Original/Fixed16/Fixed24 local clock profiles.
+Users must provide their own legally obtained ROM/BIOS/media images. MAME's
+legal information notes that users need the rights to the ROMs they use, and
+MAME's ROM documentation explains that BIOS, device sets and CHD media may be
+required separately from a game set.
 
-See [Compatibility Matrix](docs/COMPATIBILITY_MATRIX.md) for title-specific
-observations that are already documented for the public beta.
+Corresponding source for redistributed GPL components is provided as the
+matching RC3 source release asset listed above. See
+`docs/RC3_MAME_SOURCE_TRACEABILITY_AUDIT_2026-08-20.md` and
+`docs/RC3_STICK_ACCEPTANCE_2026-08-21.md` for the source-to-build-to-package
+and acceptance records.
 
-## Hardware reference
+## Support And Follow The Project
 
-The current beta reference uses ESP8266 NodeMCU adapters, with display and
-no-display variants supported by the packaged firmware.
+NeoConnect VirtualBus is an independent development project. The base software
+is not intended to be locked behind a paid membership.
 
-<p align="center">
-  <img src="assets/virtualbus-esp-adapters.png" alt="ESP8266 NodeMCU VirtualBus adapter examples" width="520">
-</p>
-
-## Package model
-
-Git tracks public documentation and release metadata. Compiled packages are
-published only as immutable GitHub Release assets:
-
-```text
-VirtualBus-<version>-User_USB_Portable.zip
-VirtualBus-<version>-Corresponding_Source.zip
-SHA256SUMS.txt
-```
-
-The internal Developer Reference, complete logs, historical LKGs and research
-snapshots are archived separately and are not public release assets.
-
-## Important limits
-
-- No ROM, BIOS or CHD data is included or provided.
-- NodeMCU RS485 is protocol-validated but not release-qualified for continuous
-  real-time InputSync.
-- ESP32 HardwareSerial/MAX485 remains a separate hardware qualification block.
-- Public relay, lobby, accounts and NAT traversal are outside the current beta.
-- MiSTer InputSync v3 and mixed-clock MAME/MiSTer InputSync are not public PASS
-  claims until the exact package artifacts pass physical acceptance.
-
-## Start here
-
-1. Read [Beta Scope](BETA_SCOPE.md).
-2. Read [Installation](INSTALL.md).
-3. Review the [Protocol Overview](PROTOCOL_OVERVIEW.md).
-4. Keep MAME, MiSTer, frontend and ESP components from one release together.
-
-VirtualBus follows the principles in the [Project Charter](PROJECT_CHARTER.md):
-local operation, self-hosting, transparent diagnostics, voluntary telemetry
-and preservation are part of the system contract.
-
-## Support and follow the project
-
-NeoConnect VirtualBus is an independent development project.
-
-The base software is not intended to be locked behind a paid membership. If
-you find the project useful and would like to help fund further development,
-test hardware, adapters and future hardware prototypes, voluntary support is
-welcome through Ko-fi:
+Voluntary support helps fund further development, test hardware, adapters and
+future hardware prototypes:
 
 [Support NeoConnect VirtualBus on Ko-fi](https://ko-fi.com/macdaxter)
 
-I'm also interested in hearing from:
-
-- Neo Geo MVS/AES owners.
-- MiSTer users.
-- MAME users.
-- Arcade operators.
-- Retro events and museums.
-- Developers interested in compatible integrations.
-- People willing to help test unusual Neo Geo multiplayer behavior.
-
 Feedback, testing and documentation are just as valuable as financial support.
-
-AI accelerated the implementation, but it did not define the project. I designed the system, chose the experiments, interpreted the results and made the architectural decisions. AI effectively gave me a virtual development team, allowing me to implement and test ideas at roughly the speed I could reason about them.
