@@ -1,8 +1,8 @@
 # NeoConnect VirtualBus 0.9.0-beta.6
 
-Public Beta / GitHub Pre-release Draft
+Public Beta / GitHub Pre-release
 
-This is the draft release note for the first public beta package for
+This is the first public beta package for
 NeoConnect VirtualBus. The RC3 user package and matching corresponding-source
 asset have both been produced from the documented RC3 source-to-build chain and
 accepted by the 2026-08-21 stick/InputSync run.
@@ -134,7 +134,7 @@ MiSTer project, SNK or any game publisher.
 ## References Inside The Repository
 
 - `docs/BETA_ACCEPTANCE_MATRIX.md`
-- `docs/BETA_COMPATIBILITY_MATRIX.md`
+- `docs/COMPATIBILITY_MATRIX.md`
 - `docs/BETA_KNOWN_LIMITATIONS.md`
 - `docs/BETA_MANIFEST.md`
-- `docs/BETA_PROJECT_CHARTER.md`
+- `PROJECT_CHARTER.md`

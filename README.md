@@ -1,6 +1,6 @@
 # NeoConnect VirtualBus
 
-![NeoConnect VirtualBus banner](banner.png)
+![NeoConnect VirtualBus banner](assets/virtualbus-public-beta-title.png)
 
 NeoConnect VirtualBus asks a different question:
 
@@ -108,7 +108,7 @@ during the RC3 acceptance run.
 See:
 
 - `docs/BETA_ACCEPTANCE_MATRIX.md`
-- `docs/BETA_COMPATIBILITY_MATRIX.md`
+- `docs/COMPATIBILITY_MATRIX.md`
 - `docs/BETA_KNOWN_LIMITATIONS.md`
 - `docs/BETA_MANIFEST.md`
 
